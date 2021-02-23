@@ -1,11 +1,20 @@
 import React from "react";
 import Cards from "../components/Card/Cards";
+import logo from "../assets/logo.svg";
+import menuDash from "../assets/menu-dash.svg";
+import profile from "../assets/profile.svg";
+
 import {
   StyledHomeContainer,
   StyleHeaderContainer,
   StyleHeader,
+  StyleSVG,
+  StyleProfileSVG,
   StyleSecondaryHeader,
+  StyleBreadcrumb,
+  StylePageTitle,
   StyleFooter,
+  StyleCopywrightTag,
   StyleLeftContainer,
   StyleRightContainer,
   StyledLink,
@@ -15,13 +24,24 @@ const Home = () => {
   return (
     <StyledHomeContainer>
       <StyleHeaderContainer>
-        <StyleHeader></StyleHeader>
-        <StyleSecondaryHeader></StyleSecondaryHeader>
+        <StyleHeader>
+          <StyleLeftContainer>
+            <StyleSVG src={logo} alt="logo" />
+          </StyleLeftContainer>
+          <StyleRightContainer>
+            <StyleProfileSVG src={menuDash} alt="menu-dash" />
+            <StyleProfileSVG src={profile} alt="profile" />
+          </StyleRightContainer>
+        </StyleHeader>
+        <StyleSecondaryHeader>
+          <StyleBreadcrumb>{"Dashboard > My apps"}</StyleBreadcrumb>
+          <StylePageTitle>{"My apps"}</StylePageTitle>
+        </StyleSecondaryHeader>
       </StyleHeaderContainer>
       <Cards />
       <StyleFooter>
         <StyleLeftContainer>
-          <p>2019 &copy; NETFRONT</p>
+          <StyleCopywrightTag>2019 &copy; NETFRONT</StyleCopywrightTag>
         </StyleLeftContainer>
         <StyleRightContainer>
           <StyledLink to="#">Privacy </StyledLink>|

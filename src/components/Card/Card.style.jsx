@@ -38,7 +38,7 @@ export const StylePublishedTitle = styled.div`
   top: 15px;
   left: 15px;
   font-weight: 100;
-  font-size: 13pt;
+  font-size: 10pt;
   line-height: 0;
   color: ${$white};
   background-color: ${(props) => (props.published ? $published : $unpublished)};
@@ -51,11 +51,11 @@ export const StyledCardInfoSection = styled.div`
 
 export const StyledAppTitle = styled.h1`
   margin: 10px 0;
-  font-size: 20pt;
+  font-size: 17pt;
 `;
 
 export const StyledUserTitle = styled.p`
   margin: 10px 0;
   font-weight: 100;
-  font-size: 13pt;
+  font-size: 10pt;
 `;

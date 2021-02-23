@@ -36,7 +36,7 @@ const gridSize = {
   twoBox: "960px",
   threeBox: "1270px",
   fourBox: "1575px",
-  fiveBox: "1894px",
+  fiveBox: "1890px",
 };
 
 export const grid = {
@@ -44,5 +44,5 @@ export const grid = {
   twoBox: `(max-width: ${gridSize.twoBox})`,
   threeBox: `(max-width: ${gridSize.threeBox})`,
   fourBox: `(max-width: ${gridSize.fourBox})`,
-  fiveBox: `(max-width: ${gridSize.fiveBox})`,
+  fiveBox: `(min-width: ${gridSize.fiveBox})`,
 };
