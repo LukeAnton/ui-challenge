@@ -8,7 +8,6 @@ export const StyleCardsGrid = styled.div`
   justify-content: flex-start;
   flex-direction: row;
   flex-flow: wrap;
-  flex: 0 1 auto;
   @media ${grid.fourBox} {
     width: 1248px;
   }

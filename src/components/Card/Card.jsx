@@ -2,6 +2,7 @@ import React from "react";
 
 import logo from "../../assets/image-placement.svg";
 import StarRating from "../StarRating/StarRating";
+
 import {
   StyledCard,
   StyledCardImageContainer,
