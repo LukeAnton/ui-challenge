@@ -2,8 +2,6 @@
 
 ### Installation
 
-------- Mock API "auto PORT=3000"
-
 1. -- Clone server
 
 ```sh
