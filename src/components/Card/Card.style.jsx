@@ -4,13 +4,13 @@ import { $white, $grey, $published, $unpublished } from "../../_config.style";
 export const StyledCard = styled.div`
   height: 315px;
   width: 290px;
+  margin: 10px;
   border: 1px solid ${$grey};
   border-radius: 15px;
-  margin: 10px;
   &:hover {
     transition: 0.2s;
     transform-origin: center;
-    transform: scale(1);
+    transform: scale(1.05);
     box-shadow: 0 0 8px ${$grey};
   }
 `;
@@ -46,7 +46,7 @@ export const StylePublishedTitle = styled.div`
 
 export const StyledCardInfoSection = styled.div`
   height: 35%;
-  padding: 0 20px;
+  padding: 5px 20px;
 `;
 
 export const StyledAppTitle = styled.h1`
@@ -59,3 +59,4 @@ export const StyledUserTitle = styled.p`
   font-weight: 100;
   font-size: 10pt;
 `;
+export const StyleRatingSection = styled.div``;

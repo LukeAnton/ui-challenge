@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/image-placement.svg";
+import StarRating from "../StarRating/StarRating";
 import {
   StyledCard,
   StyledCardImageContainer,
@@ -8,10 +9,10 @@ import {
   StyledCardInfoSection,
   StyledAppTitle,
   StyledUserTitle,
+  StyleRatingSection,
 } from "./Card.style";
 
-export const Card = ({ title, published, user, rating }) => {
-  console.log(title);
+export const Card = ({ title, published, user, rating, id }) => {
   return (
     <div>
       <StyledCard>
@@ -24,6 +25,15 @@ export const Card = ({ title, published, user, rating }) => {
         <StyledCardInfoSection>
           <StyledAppTitle>{title}</StyledAppTitle>
           <StyledUserTitle>by {user} </StyledUserTitle>
+          <StyleRatingSection>
+            <StarRating
+              title={title}
+              published={published}
+              user={user}
+              rating={rating}
+              id={id}
+            />
+          </StyleRatingSection>
         </StyledCardInfoSection>
       </StyledCard>
     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import axios from "axios";
 import Card from "./Card";
 
@@ -8,20 +9,30 @@ export const Cards = () => {
   //Cards JSON object
   const [cards, setCards] = useState([]);
 
-  //Calling the cards server
+  //Get cards from JSON API
+  const getCards = async () => {
+    try {
+      axios
+        .get("http://localhost:3000/cards")
+        .then((res) => setCards(res.data));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
-    axios
-      .get("https://my-json-server.typicode.com/LukeAnton/mock-server/data")
-      .then((res) => setCards(res.data.cards));
-    console.log(cards);
+    //Calling getCards on mount
+    getCards();
     return () => {};
   }, []);
 
   return (
     <StyleCardsGrid>
-      {cards.map((card) => {
+      {cards.map((card, i) => {
         return (
           <Card
+            key={i}
+            id={card.id}
             title={card.title}
             published={card.published}
             user={card.user}
