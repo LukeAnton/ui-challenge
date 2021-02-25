@@ -5,7 +5,7 @@ import {
   StyleLeftContainer,
   StyleRightContainer,
   StyledLink,
-} from "./Footer.style";
+} from "../../styles/Footer.style";
 
 const Footer = () => {
   return (

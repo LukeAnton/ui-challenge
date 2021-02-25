@@ -4,7 +4,7 @@ import fullStar from "../../assets/single-star-gold.svg";
 import emptyStar from "../../assets/single-star-grey.svg";
 import axios from "axios";
 import { starArrayMerge, calculateRating } from "../../functions/functions";
-import { StyledStar } from "./StarRating.style";
+import { StyledStar } from "../../styles/StarRating.style";
 
 const StarRating = ({ title, published, user, rating, id }) => {
   const [fullStarCount, setFullStarCount] = useState(parseFloat(rating));

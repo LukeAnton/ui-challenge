@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { $white, $offBlack, grid } from "../../_config.style";
+import { $white, $offBlack } from "../_config.style";
 
 export const StyleFooter = styled.footer`
   height: 70px;

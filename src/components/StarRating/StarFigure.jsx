@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledStarRatingFigure } from "./StarFigure.style";
+import { StyledStarRatingFigure } from "../../styles/StarFigure.style";
 
 const StarFigure = ({ fullStarCount }) => {
   return (

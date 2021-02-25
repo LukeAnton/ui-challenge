@@ -12,7 +12,7 @@ import {
   StyledAppTitle,
   StyledUserTitle,
   StyleRatingSection,
-} from "./Card.style";
+} from "../../styles/Card.style";
 
 export const Card = ({ title, published, user, rating, id }) => {
   return (

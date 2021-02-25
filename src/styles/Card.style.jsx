@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { $white, $grey, $published, $unpublished } from "../../_config.style";
+import { $white, $grey, $published, $unpublished } from "../_config.style";
 
 export const StyledCard = styled.div`
   height: 315px;

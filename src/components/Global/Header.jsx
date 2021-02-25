@@ -13,7 +13,7 @@ import {
   StylePageTitle,
   StyleLeftContainer,
   StyleRightContainer,
-} from "./Header.style";
+} from "../../styles/Header.style";
 
 const Header = () => {
   return (

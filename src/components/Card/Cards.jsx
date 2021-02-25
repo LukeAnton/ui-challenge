@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 
-import { StyleCardsGrid } from "./Cards.style";
+import { StyleCardsGrid } from "../../styles/Cards.style";
 
 export const Cards = () => {
   //Cards JSON object

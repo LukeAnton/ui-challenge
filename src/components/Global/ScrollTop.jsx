@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import toTop from "../../assets/to-top.svg";
 
-import { StyleToTop } from "./ScrollTop.style";
+import { StyleToTop } from "../../styles/ScrollTop.style";
 
 const ScrollTop = () => {
   const [showScroll, setShowScroll] = useState(false);
