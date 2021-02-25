@@ -1,0 +1,5 @@
+Cards example
+
+```js
+<Cards />
+```

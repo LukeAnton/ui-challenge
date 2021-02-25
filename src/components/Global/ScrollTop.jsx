@@ -23,7 +23,6 @@ const ScrollTop = () => {
         src={toTop}
         alt="to-top"
       />
-      ;
     </div>
   );
 };
