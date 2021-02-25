@@ -37,7 +37,6 @@ const StarRating = ({ title, published, user, rating, id }) => {
           rating: totalRating,
         })
         .then(() => {
-          console.log(sortGrey(totalRating));
           setFullStarCount(totalRating);
           setGoldStars(sortGold(totalRating));
           setGreyStars(sortGrey(totalRating));
@@ -49,7 +48,6 @@ const StarRating = ({ title, published, user, rating, id }) => {
 
   //on click handler
   const handleClick = (item, color) => {
-    console.log(greyStars, goldStars);
     addRating(item, color);
   };
 
