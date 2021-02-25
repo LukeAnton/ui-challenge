@@ -19,9 +19,7 @@
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "styleguidist": "styleguidist server --config ./config/styleguidist.config.js",
-    "styleguidist-build": "styleguidist server --config ./config/styleguidist.config.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

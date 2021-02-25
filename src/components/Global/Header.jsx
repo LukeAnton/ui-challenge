@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import menuDash from "../../assets/menu-dash.svg";
+import miniNav from "../../assets/mini-nav.svg";
 import profile from "../../assets/profile.svg";
 
 import {
