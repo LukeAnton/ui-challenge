@@ -1,5 +1,5 @@
 Card example:
 
 ```js
-<Card title="App title 1" published={false} user="Netfront" rating={3} />
+<Card title="App title 1" published={false} user="Netfront" rating={3} id={1} />
 ```

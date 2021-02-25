@@ -1,5 +1,5 @@
 StarRating example:
 
 ```js
-<StarRating rating="3" />
+<StarRating onClick={() => handleClick(1, "grey")} rating="3" />
 ```
