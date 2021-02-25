@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
 import Card from "./Card";
 
@@ -12,7 +11,7 @@ export const Cards = () => {
   //Get cards from JSON API
   const getCards = async () => {
     try {
-      axios
+      await axios
         .get("http://localhost:3000/cards")
         .then((res) => setCards(res.data));
     } catch (err) {
@@ -20,14 +19,13 @@ export const Cards = () => {
     }
   };
 
+  //Calling api on mount
   useEffect(() => {
-    //Calling getCards on mount
     getCards();
-    return () => {};
   }, []);
 
   return (
-    <StyleCardsGrid>
+    <StyleCardsGrid style={{ height: "100%" }}>
       {cards.map((card, i) => {
         return (
           <Card
