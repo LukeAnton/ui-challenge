@@ -17,7 +17,8 @@ export const StyleHeader = styled.div`
 `;
 
 export const StyleSVG = styled.img`
-  height: 35px;
+  
+  height: ${(props) => (props.changeSize ? "50px" : "30px")}
   margin: 10px 5px;
   cursor: pointer;
 `;
