@@ -25,3 +25,36 @@ export const updateStars = (calculatedRating) => {
   }
   return;
 };
+//update gold stars
+export const sortGold = (goldCount) => {
+  let updatedGreyStars = [];
+  //initial star array is set here
+  for (let i = 0; i < Math.round(goldCount); i++) {
+    updatedGreyStars.push(i);
+  }
+  return updatedGreyStars;
+};
+//update grey stars
+export const sortGrey = (greyCount) => {
+  let updatedGreyStars = [];
+  // turning the grey stars into an array to map in the jsx
+  for (let i = 0; i < Math.abs(Math.round(greyCount) - 5); i++) {
+    updatedGreyStars.push(i);
+  }
+  return updatedGreyStars.reverse();
+};
+
+export const setGoldSort = (goldStarCount) => {
+  let goldStars = [];
+  for (let i = 0; i < Math.round(goldStarCount); i++) {
+    goldStars.push(i);
+  }
+  return goldStars;
+};
+export const setGreySort = (greyStarCount) => {
+  let greyStars = [];
+  for (let i = 0; i < greyStarCount; i++) {
+    greyStars.push(i);
+  }
+  return greyStars.reverse();
+};
