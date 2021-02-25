@@ -14,6 +14,7 @@ import {
   StylePageTitle,
   StyleLeftContainer,
   StyleRightContainer,
+  StyleMiniNav,
 } from "../../styles/Header.style";
 
 const Header = () => {
@@ -24,6 +25,7 @@ const Header = () => {
           <StyleSVG src={logo} alt="logo" />
         </StyleLeftContainer>
         <StyleRightContainer>
+          <StyleMiniNav src={miniNav} alt="mini-nav" />
           <StyleProfileSVG src={menuDash} alt="menu-dash" />
           <StyleProfileSVG src={profile} alt="profile" />
         </StyleRightContainer>

@@ -17,14 +17,25 @@ export const StyleHeader = styled.div`
 `;
 
 export const StyleSVG = styled.img`
-  
-  height: ${(props) => (props.changeSize ? "50px" : "30px")}
+  height: 40px;
   margin: 10px 5px;
   cursor: pointer;
+  display: block;
+`;
+export const StyleMiniNav = styled.img`
+  transform: rotate(180deg);
+  height: 30px;
+  display: none;
+  @media ${grid.twoBox} {
+    display: block;
+  }
 `;
 export const StyleProfileSVG = styled(StyleSVG)`
   height: 20px;
   margin: 0 10px;
+  @media ${grid.twoBox} {
+    display: none;
+  }
 `;
 
 export const StyleSecondaryHeader = styled.div`

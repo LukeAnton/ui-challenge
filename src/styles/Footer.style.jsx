@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { $white, $offBlack } from "../_config.style";
+import { $white, $offBlack, grid } from "../_config.style";
 
 export const StyleFooter = styled.footer`
   height: 70px;
@@ -15,6 +15,10 @@ export const StyleFooter = styled.footer`
   background-color: ${$offBlack};
   color: ${$white};
   font-weight: 100;
+  @media ${grid.twoBox} {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const StyleCopywrightTag = styled.p`
@@ -29,8 +33,16 @@ export const StyledLink = styled(Link)`
 
 export const StyleLeftContainer = styled.div`
   display: inline-block;
+  @media ${grid.twoBox} {
+    display: block;
+    margin: 5px 0;
+  }
 `;
 export const StyleRightContainer = styled.div`
   display: inline-block;
   display: flex;
+  @media ${grid.twoBox} {
+    display: block;
+    margin-top: 10px;
+  }
 `;
