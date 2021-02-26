@@ -1,4 +1,4 @@
-import React } from "react";
+import React from "react";
 import Cards from "../components/Card/Cards";
 import ScrollTop from "../components/Global/ScrollTop";
 
