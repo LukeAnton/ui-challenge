@@ -11,6 +11,7 @@ import {
   StyleProfileSVG,
   StyleSecondaryHeader,
   StyleBreadcrumb,
+  StyleBreadCrumbContainer,
   StylePageTitle,
   StyleLeftContainer,
   StyleRightContainer,
@@ -31,8 +32,10 @@ const Header = () => {
         </StyleRightContainer>
       </StyleHeader>
       <StyleSecondaryHeader>
-        <StyleBreadcrumb>{"Dashboard > My apps"}</StyleBreadcrumb>
-        <StylePageTitle>{"My apps"}</StylePageTitle>
+        <StyleBreadCrumbContainer>
+          <StyleBreadcrumb>{"Dashboard > My apps"}</StyleBreadcrumb>
+          <StylePageTitle>{"My apps"}</StylePageTitle>
+        </StyleBreadCrumbContainer>
       </StyleSecondaryHeader>
     </StyleHeaderContainer>
   );

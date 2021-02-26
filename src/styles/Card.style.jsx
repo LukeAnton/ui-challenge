@@ -30,7 +30,7 @@ export const StyledCardImage = styled.img`
   width: 123px;
 `;
 
-export const StylePublishedTitle = styled.div`
+export const StylePublishedTitle = styled.h2`
   display: inline-block;
   position: relative;
   padding: 15px;
@@ -49,7 +49,7 @@ export const StyledCardInfoSection = styled.div`
   padding: 5px 20px;
 `;
 
-export const StyledAppTitle = styled.h1`
+export const StyledAppTitle = styled.h2`
   margin: 10px 0;
   font-size: 17pt;
 `;

@@ -16,14 +16,12 @@ const ScrollTop = () => {
 
   window.addEventListener("scroll", checkScrollTop);
   return (
-    <div>
-      <StyleToTop
-        showScroll={showScroll}
-        onClick={() => scrollTop()}
-        src={toTop}
-        alt="to-top"
-      />
-    </div>
+    <StyleToTop
+      showScroll={showScroll}
+      onClick={() => scrollTop()}
+      src={toTop}
+      alt="to-top"
+    />
   );
 };
 

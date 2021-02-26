@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { $gradient1, $gradient2, $grey, grid } from "../_config.style";
 
-export const StyleHeaderContainer = styled.div`
+export const StyleHeaderContainer = styled.header`
   height: 140px;
   width: 100%;
   margin: 0 0 30px 0;
@@ -45,14 +45,9 @@ export const StyleSecondaryHeader = styled.div`
   font-weight: 100;
   padding: 5px 0;
 `;
-
-export const StyleBreadcrumb = styled.div`
+export const StyleBreadCrumbContainer = styled.div`
   width: 1560px;
   margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  line-height: 26px;
-  font-size: 10pt;
   //breadcrumb container same width as cards array container
   // - card padding "20px" to align text with edge of card
   @media ${grid.fiveBox} {
@@ -74,7 +69,14 @@ export const StyleBreadcrumb = styled.div`
     width: calc(315px - 20px);
   }
 `;
-export const StylePageTitle = styled(StyleBreadcrumb)`
+export const StyleBreadcrumb = styled.p`
+  display: block;
+  line-height: 26px;
+  font-size: 10pt;
+  font-weight: 100;
+`;
+export const StylePageTitle = styled.h2`
+  display: block;
   font-size: 17pt;
   font-weight: bold;
 `;

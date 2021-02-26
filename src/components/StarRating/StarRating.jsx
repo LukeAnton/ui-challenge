@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from "react";
 import StarFigure from "./StarFigure";
-import fullStar from "../../assets/single-star-gold.svg";
-import emptyStar from "../../assets/single-star-grey.svg";
+import goldStar from "../../assets/single-star-gold.svg";
+import greyStar from "../../assets/single-star-grey.svg";
 import axios from "axios";
-import {
-  starArrayMerge,
-  calculateRating,
-  sortGold,
-  sortGrey,
-  setGoldSort,
-  setGreySort,
-} from "../../functions/functions";
+
+//functions import
+import { calculateRating, sortStars } from "../../functions/functions";
 import { StyledStar } from "../../styles//StarRating.style";
 
 const StarRating = ({ title, published, user, rating, id }) => {
   const [fullStarCount, setFullStarCount] = useState(parseFloat(rating));
   const [emptyStarCount] = useState(Math.abs(Math.round(rating) - 5));
-  const [goldStars, setGoldStars] = useState([]);
-  const [greyStars, setGreyStars] = useState([]);
+  const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    setGoldStars(setGoldSort(fullStarCount));
-    setGreyStars(setGreySort(emptyStarCount));
+    setStars(sortStars(fullStarCount, emptyStarCount));
   }, []);
 
-  //submits a rating
-  const addRating = async (item, color) => {
-    const starIndex = starArrayMerge(item, color);
-    const totalRating = calculateRating(starIndex, fullStarCount);
+  //this function submits a rating
+  const addRating = async (item) => {
+    const totalRating = calculateRating(item, fullStarCount);
+    const goldStarCountUpdate = Math.round(totalRating);
+    const greyStarCountUpdate = Math.abs(Math.round(totalRating) - 5);
+
     try {
       axios
         .put(`http://localhost:3000/cards/${id}`, {
@@ -38,8 +33,7 @@ const StarRating = ({ title, published, user, rating, id }) => {
         })
         .then(() => {
           setFullStarCount(totalRating);
-          setGoldStars(sortGold(totalRating));
-          setGreyStars(sortGrey(totalRating));
+          setStars(sortStars(goldStarCountUpdate, greyStarCountUpdate));
         });
     } catch (err) {
       console.error(err);
@@ -47,34 +41,24 @@ const StarRating = ({ title, published, user, rating, id }) => {
   };
 
   //on click handler
-  const handleClick = (item, color) => {
-    addRating(item, color);
+  const handleClick = (item) => {
+    addRating(item);
   };
 
   return (
-    <div>
-      {goldStars.map((item, _) => {
+    <>
+      {stars.map((item) => {
         return (
           <StyledStar
-            key={item}
-            onClick={() => handleClick(item + 1, "gold")}
-            src={fullStar}
-            alt="single-star-gold"
-          />
-        );
-      })}
-      {greyStars.map((item, _) => {
-        return (
-          <StyledStar
-            key={item}
-            onClick={() => handleClick(item + 1, "grey")}
-            src={emptyStar}
-            alt="single-star-gold"
+            key={item.index}
+            onClick={() => handleClick(item.index)}
+            src={item.color === "gold" ? goldStar : greyStar}
+            alt="star-svg"
           />
         );
       })}
       <StarFigure fullStarCount={fullStarCount} />
-    </div>
+    </>
   );
 };
 
