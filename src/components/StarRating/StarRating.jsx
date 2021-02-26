@@ -22,7 +22,6 @@ const StarRating = ({ title, published, user, rating, id }) => {
     const totalRating = calculateRating(item, fullStarCount);
     const goldStarCountUpdate = Math.round(totalRating);
     const greyStarCountUpdate = Math.abs(Math.round(totalRating) - 5);
-
     try {
       axios
         .put(`http://localhost:3000/cards/${id}`, {

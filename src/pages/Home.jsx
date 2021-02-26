@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React } from "react";
 import Cards from "../components/Card/Cards";
 import ScrollTop from "../components/Global/ScrollTop";
 
-import { StyledHomeContainer, StyleToTop } from "./Home.style";
+import { StyledHomeContainer } from "./Home.style";
 
 const Home = () => {
   return (

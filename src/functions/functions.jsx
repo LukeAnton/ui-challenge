@@ -1,8 +1,11 @@
+//Functions
+
 //Adds the users rating with the existing rating and divides by 2 to achieve the average rating
 export const calculateRating = (item, fullStarCount) => {
   return (item + fullStarCount) / 2;
 };
 
+//Star sort function --- takes in total grey and gold stars and returns a merged object array of stars :)
 export const sortStars = (goldStarCount, greyStarCount) => {
   let greyStars = [];
   let goldStars = [];
