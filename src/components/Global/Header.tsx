@@ -4,6 +4,7 @@ import menuDash from "../../assets/menu-dash.svg";
 import miniNav from "../../assets/mini-nav.svg";
 import profile from "../../assets/profile.svg";
 
+//Style imports
 import {
   StyleHeaderContainer,
   StyleHeader,
@@ -18,7 +19,7 @@ import {
   StyleMiniNav,
 } from "../../styles/Header.style";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <StyleHeaderContainer className="render-font">
       <StyleHeader>

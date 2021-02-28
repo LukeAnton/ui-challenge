@@ -1,4 +1,4 @@
-export interface Props {
+export interface CardProps {
   title: string;
   published: boolean;
   user: string;

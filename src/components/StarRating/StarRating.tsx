@@ -4,21 +4,32 @@ import goldStar from "../../assets/single-star-gold.svg";
 import greyStar from "../../assets/single-star-grey.svg";
 import axios from "axios";
 
-//functions import
+//Typescript imports
+import { StarRatingProps, Stars } from "../../typescript/interface/starRating";
+
+//function imports
 import { calculateRating, sortStars } from "../../functions/functions";
+
+//Style imports
 import { StyledStar } from "../../styles//StarRating.style";
 
-const StarRating = ({ title, published, user, rating, id }) => {
-  const [fullStarCount, setFullStarCount] = useState(parseFloat(rating));
-  const [emptyStarCount] = useState(Math.abs(Math.round(rating) - 5));
-  const [stars, setStars] = useState([]);
+const StarRating: React.FC<StarRatingProps> = ({
+  title,
+  published,
+  user,
+  rating,
+  id,
+}) => {
+  const [fullStarCount, setFullStarCount] = useState<number>(rating);
+  const [emptyStarCount] = useState<number>(Math.abs(Math.round(rating) - 5));
+  const [stars, setStars] = useState<Stars[]>([]);
 
   useEffect(() => {
     setStars(sortStars(fullStarCount, emptyStarCount));
   }, []);
 
   //this function submits a rating
-  const addRating = async (item) => {
+  const addRating = async (item: number) => {
     const totalRating = calculateRating(item, fullStarCount);
     const goldStarCountUpdate = Math.round(totalRating);
     const greyStarCountUpdate = Math.abs(Math.round(totalRating) - 5);
@@ -40,18 +51,18 @@ const StarRating = ({ title, published, user, rating, id }) => {
   };
 
   //on click handler
-  const handleClick = (item) => {
+  const handleClick = (item: number) => {
     addRating(item);
   };
 
   return (
     <>
-      {stars.map((item) => {
+      {stars.map(({ index, color }) => {
         return (
           <StyledStar
-            key={item.index}
-            onClick={() => handleClick(item.index)}
-            src={item.color === "gold" ? goldStar : greyStar}
+            key={index}
+            onClick={() => handleClick(index)}
+            src={color === "gold" ? goldStar : greyStar}
             alt="star-svg"
           />
         );

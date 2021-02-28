@@ -41,7 +41,8 @@ export const StylePublishedTitle = styled.h2<{ published: boolean }>`
   font-size: 10pt;
   line-height: 0;
   color: ${$white};
-  background-color: ${(props) => (props.published ? $published : $unpublished)};
+  background-color: ${({ published }) =>
+    published ? $published : $unpublished};
 `;
 
 export const StyledCardInfoSection = styled.div`

@@ -1,8 +1,13 @@
 import React from "react";
-import "../../styles/Card.css";
 import logo from "../../assets/image-placement.svg";
 import StarRating from "../StarRating/StarRating";
-import { Props } from "../../typescript/interface/card";
+
+//Typescript imports
+import { CardProps } from "../../typescript/interface/card";
+
+//Style imports
+import "../../styles/Card.css";
+
 import {
   StyledCard,
   StyledCardImageContainer,
@@ -14,7 +19,7 @@ import {
   StyleRatingSection,
 } from "../../styles/Card.style";
 
-export const Card: React.FC<Props> = ({
+export const Card: React.FC<CardProps> = ({
   title,
   published,
   user,

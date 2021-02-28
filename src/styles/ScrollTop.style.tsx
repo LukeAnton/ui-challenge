@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const StyleToTop = styled.img`
+export const StyleToTop = styled.img<{ showScroll: boolean }>`
   position: fixed;
   width: 70px;
   bottom: 70px;
   right: 30px;
   cursor: pointer;
-  display: ${(props) => (props.showScroll ? "block" : "none")};
+  display: ${({ showScroll }) => (showScroll ? "block" : "none")};
   &:hover {
     transition: 0.2s;
     transform-origin: center;

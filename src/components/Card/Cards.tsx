@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
+
+//Style imports
 import { StyleCardsGrid } from "../../styles/Cards.style";
 
 export const Cards: React.FC = () => {

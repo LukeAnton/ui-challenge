@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import toTop from "../../assets/to-top.svg";
 
+//Style imports
 import { StyleToTop } from "../../styles/ScrollTop.style";
 
-const ScrollTop = () => {
-  const [showScroll, setShowScroll] = useState(false);
+const ScrollTop: React.FC = () => {
+  const [showScroll, setShowScroll] = useState<boolean>(false);
 
   const checkScrollTop = () => {
     window.scrollY > 10 ? setShowScroll(true) : setShowScroll(false);

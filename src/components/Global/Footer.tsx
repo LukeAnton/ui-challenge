@@ -1,4 +1,6 @@
 import React from "react";
+
+//Style imports
 import {
   StyleFooter,
   StyleCopywrightTag,
@@ -7,7 +9,7 @@ import {
   StyledLink,
 } from "../../styles/Footer.style";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <StyleFooter>
       <StyleLeftContainer>
