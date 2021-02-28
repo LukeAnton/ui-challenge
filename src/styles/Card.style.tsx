@@ -30,7 +30,7 @@ export const StyledCardImage = styled.img`
   width: 123px;
 `;
 
-export const StylePublishedTitle = styled.h2`
+export const StylePublishedTitle = styled.h2<{ published: boolean }>`
   display: inline-block;
   position: relative;
   padding: 15px;

@@ -1,8 +1,8 @@
 import React from "react";
-import "./Card.css";
+import "../../styles/Card.css";
 import logo from "../../assets/image-placement.svg";
 import StarRating from "../StarRating/StarRating";
-
+import { Props } from "../../typescript/interface/card";
 import {
   StyledCard,
   StyledCardImageContainer,
@@ -14,7 +14,13 @@ import {
   StyleRatingSection,
 } from "../../styles/Card.style";
 
-export const Card = ({ title, published, user, rating, id }) => {
+export const Card: React.FC<Props> = ({
+  title,
+  published,
+  user,
+  rating,
+  id,
+}) => {
   return (
     <StyledCard className="render-font">
       <StylePublishedTitle published={published}>

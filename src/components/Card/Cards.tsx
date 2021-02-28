@@ -3,16 +3,16 @@ import axios from "axios";
 import Card from "./Card";
 import { StyleCardsGrid } from "../../styles/Cards.style";
 
-export const Cards = () => {
+export const Cards: React.FC = () => {
   //Cards JSON object
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<[]>([]);
 
   //Get cards from JSON API
   const getCards = async () => {
     try {
       await axios
         .get("http://localhost:3000/cards")
-        .then((res) => setCards(res.data));
+        .then(({ data }) => setCards(data));
     } catch (err) {
       console.error(err);
     }
@@ -24,16 +24,16 @@ export const Cards = () => {
   }, []);
 
   return (
-    <StyleCardsGrid style={{ height: "100%" }}>
-      {cards.map((card, i) => {
+    <StyleCardsGrid>
+      {cards.map(({ title, published, user, rating, id }) => {
         return (
           <Card
-            key={i}
-            id={card.id}
-            title={card.title}
-            published={card.published}
-            user={card.user}
-            rating={card.rating}
+            title={title}
+            published={published}
+            user={user}
+            rating={rating}
+            id={id}
+            key={id}
           />
         );
       })}
