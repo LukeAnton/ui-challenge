@@ -38,7 +38,7 @@ export const StyleLeftContainer = styled.div`
     margin: 5px 0;
   }
 `;
-export const StyleRightContainer = styled.div`
+export const StyleRightContainer = styled.ul`
   display: inline-block;
   display: flex;
   @media ${grid.twoBox} {
