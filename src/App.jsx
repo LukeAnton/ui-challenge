@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-import "./App.css";
+import "./styles/App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Global/Footer";
 import Header from "./components/Global/Header";

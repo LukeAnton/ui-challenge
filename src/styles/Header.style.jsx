@@ -7,7 +7,7 @@ export const StyleHeaderContainer = styled.header`
   width: 100%;
   margin: 0 0 30px 0;
 `;
-export const StyleHeader = styled.div`
+export const StyleHeader = styled.nav`
   height: 50%;
   padding: 10px;
   display: flex;
