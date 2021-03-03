@@ -5,6 +5,7 @@ import "./styles/App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Global/Footer";
 import Header from "./components/Global/Header";
+import CardState from "./context/CardState";
 
 import { StyleMainContainer } from "./App.style.jsx";
 
@@ -20,12 +21,14 @@ const GlobalStyles = createGlobalStyle`
 const App = () => {
   return (
     <BrowserRouter>
-      <StyleMainContainer className="App">
-        <GlobalStyles />
-        <Header className="render-font " />
-        <Route exact path="/" component={Home} />
-        <Footer />
-      </StyleMainContainer>
+      <CardState>
+        <StyleMainContainer className="App">
+          <GlobalStyles />
+          <Header className="render-font " />
+          <Route exact path="/" component={Home} />
+          <Footer />
+        </StyleMainContainer>
+      </CardState>
     </BrowserRouter>
   );
 };

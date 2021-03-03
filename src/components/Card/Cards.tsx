@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import CardContext from "../../context/cardContext";
 import Card from "./Card";
-
 //Style imports
 import { StyleCardsGrid } from "../../styles/Cards.style";
-
-export const Cards: React.FC = () => {
+interface CardsTypes {
+  title: string;
+  published: boolean;
+  user: string;
+  rating: number;
+  id: number;
+}
+export const Cards: React.FC<CardsTypes> = () => {
   //Cards JSON object
-  const [cards, setCards] = useState<[]>([]);
-
-  //Get cards from JSON API
-  const getCards = async () => {
-    try {
-      await axios
-        .get("http://localhost:3000/cards")
-        .then(({ data }) => setCards(data));
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const cardContext = useContext(CardContext);
+  const { cards, getCards } = cardContext;
 
   //Calling api on mount
   useEffect(() => {
@@ -27,7 +23,12 @@ export const Cards: React.FC = () => {
 
   return (
     <StyleCardsGrid>
-      {cards.map(({ title, published, user, rating, id }) => {
+      {cards.map((card: any) => {
+        const title: string = card.title;
+        const published: boolean = card.published;
+        const user: string = card.user;
+        const rating: number = card.rating;
+        const id: number = card.id;
         return (
           <Card
             title={title}
