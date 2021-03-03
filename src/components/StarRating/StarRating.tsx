@@ -30,9 +30,9 @@ const StarRating: React.FC<StarRatingProps> = ({
 
   //this function submits a rating
   const addRating = async (item: number) => {
-    const totalRating = calculateRating(item, fullStarCount);
-    const goldStarCountUpdate = Math.round(totalRating);
-    const greyStarCountUpdate = Math.abs(Math.round(totalRating) - 5);
+    const totalRating: number = calculateRating(item, fullStarCount);
+    const goldStarCountUpdate: number = Math.round(totalRating);
+    const greyStarCountUpdate: number = Math.abs(Math.round(totalRating) - 5);
     try {
       axios
         .put(`http://localhost:3000/cards/${id}`, {
