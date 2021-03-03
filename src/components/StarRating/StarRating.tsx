@@ -21,11 +21,11 @@ const StarRating: React.FC<StarRatingProps> = ({
   id,
 }) => {
   const [fullStarCount, setFullStarCount] = useState<number>(rating);
-  const [emptyStarCount] = useState<number>(Math.abs(Math.round(rating) - 5));
+  const [greyStarCount] = useState<number>(Math.abs(Math.round(rating) - 5));
   const [stars, setStars] = useState<Stars[]>([]);
 
   useEffect(() => {
-    setStars(sortStars(fullStarCount, emptyStarCount));
+    setStars(sortStars(fullStarCount, greyStarCount));
   }, []);
 
   //this function submits a rating
