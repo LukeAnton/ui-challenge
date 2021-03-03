@@ -20,7 +20,6 @@ const CardState = (props) => {
         type: "GET_CARDS",
         payload: res.data,
       });
-      console.log(res.data);
     } catch (err) {
       console.error(err);
     }

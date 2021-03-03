@@ -1,17 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
+import React, { useEffect, useContext } from "react";
 import CardContext from "../../context/cardContext";
 import Card from "./Card";
+import { CardsTypes } from "../../typescript/interface/card";
+
 //Style imports
 import { StyleCardsGrid } from "../../styles/Cards.style";
-interface CardsTypes {
-  title: string;
-  published: boolean;
-  user: string;
-  rating: number;
-  id: number;
-}
-export const Cards: React.FC<CardsTypes> = () => {
+
+export const Cards: React.FC = () => {
   //Cards JSON object
   const cardContext = useContext(CardContext);
   const { cards, getCards } = cardContext;
@@ -23,7 +18,7 @@ export const Cards: React.FC<CardsTypes> = () => {
 
   return (
     <StyleCardsGrid>
-      {cards.map((card: any) => {
+      {cards.map((card: CardsTypes) => {
         const title: string = card.title;
         const published: boolean = card.published;
         const user: string = card.user;
