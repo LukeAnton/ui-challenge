@@ -4,6 +4,8 @@ import axios from "axios";
 import CardContext from "./cardContext";
 import CardReducer from "./CardReducer";
 
+import { calculateRating } from "../../functions/functions";
+
 const CardState = (props) => {
   const initState = {
     cards: [],
@@ -25,11 +27,28 @@ const CardState = (props) => {
     }
   };
 
+  //this function submits a rating
+  const addRating = async (title, published, user, id, item, fullStarCount) => {
+    const totalRating = calculateRating(item, fullStarCount);
+
+    try {
+      axios.put(`http://localhost:3000/cards/${id}`, {
+        title: title,
+        published: published,
+        user: user,
+        rating: totalRating,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <CardContext.Provider
       value={{
         cards: state.cards,
         getCards,
+        addRating,
       }}
     >
       {props.children}

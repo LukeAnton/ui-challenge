@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import CardContext from "../../context/cardContext";
+import CardContext from "../../context/card/cardContext";
 import Card from "./Card";
 import { CardsTypes } from "../../typescript/interface/card";
 

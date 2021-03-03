@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import CardContext from "../../context/card/cardContext";
+
 import StarFigure from "./StarFigure";
 import goldStar from "../../assets/single-star-gold.svg";
 import greyStar from "../../assets/single-star-grey.svg";
-import axios from "axios";
+// import axios from "axios";
 
 //Typescript imports
 import { StarRatingProps, Stars } from "../../typescript/interface/starRating";
@@ -23,36 +25,20 @@ const StarRating: React.FC<StarRatingProps> = ({
   const [fullStarCount, setFullStarCount] = useState<number>(rating);
   const [greyStarCount] = useState<number>(Math.abs(Math.round(rating) - 5));
   const [stars, setStars] = useState<Stars[]>([]);
-
+  const cardContext = useContext(CardContext);
+  const { addRating } = cardContext;
   useEffect(() => {
     setStars(sortStars(fullStarCount, greyStarCount));
   }, []);
 
-  //this function submits a rating
-  const addRating = async (item: number) => {
+  //on click handler
+  const handleClick = (item: number) => {
     const totalRating: number = calculateRating(item, fullStarCount);
     const goldStarCountUpdate: number = Math.round(totalRating);
     const greyStarCountUpdate: number = Math.abs(Math.round(totalRating) - 5);
-    try {
-      axios
-        .put(`http://localhost:3000/cards/${id}`, {
-          title: title,
-          published: published,
-          user: user,
-          rating: totalRating,
-        })
-        .then(() => {
-          setFullStarCount(totalRating);
-          setStars(sortStars(goldStarCountUpdate, greyStarCountUpdate));
-        });
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  //on click handler
-  const handleClick = (item: number) => {
-    addRating(item);
+    addRating(title, published, user, id, item, fullStarCount);
+    setFullStarCount(totalRating);
+    setStars(sortStars(goldStarCountUpdate, greyStarCountUpdate));
   };
 
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { $gradient1, $gradient2, $grey, grid } from "../_config.style";
+import { $gradient1, $gradient2, $grey, grid } from "./_config.style";
 
 export const StyleHeaderContainer = styled.header`
   height: 140px;

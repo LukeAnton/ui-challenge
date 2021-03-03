@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grid } from "../_config.style";
+import { grid } from "./_config.style";
 
 export const StyleCardsGrid = styled.div`
   width: 1560px;

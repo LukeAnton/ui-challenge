@@ -5,6 +5,11 @@ export default (state, action) => {
         ...state,
         cards: action.payload,
       };
+    case "ADD_RATING":
+      return {
+        ...state,
+        cards: [action.payload, ...state.cards],
+      };
     default:
       return state;
   }

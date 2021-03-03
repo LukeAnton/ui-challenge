@@ -5,7 +5,7 @@ import "./styles/App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Global/Footer";
 import Header from "./components/Global/Header";
-import CardState from "./context/CardState";
+import CardState from "./context/card/CardState";
 
 import { StyleMainContainer } from "./App.style.jsx";
 
