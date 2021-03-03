@@ -4,7 +4,6 @@ import CardContext from "../../context/card/cardContext";
 import StarFigure from "./StarFigure";
 import goldStar from "../../assets/single-star-gold.svg";
 import greyStar from "../../assets/single-star-grey.svg";
-// import axios from "axios";
 
 //Typescript imports
 import { StarRatingProps, Stars } from "../../typescript/interface/starRating";
@@ -27,6 +26,7 @@ const StarRating: React.FC<StarRatingProps> = ({
   const [stars, setStars] = useState<Stars[]>([]);
   const cardContext = useContext(CardContext);
   const { addRating } = cardContext;
+
   useEffect(() => {
     setStars(sortStars(fullStarCount, greyStarCount));
   }, []);
@@ -36,6 +36,7 @@ const StarRating: React.FC<StarRatingProps> = ({
     const totalRating: number = calculateRating(item, fullStarCount);
     const goldStarCountUpdate: number = Math.round(totalRating);
     const greyStarCountUpdate: number = Math.abs(Math.round(totalRating) - 5);
+
     addRating(title, published, user, id, item, fullStarCount);
     setFullStarCount(totalRating);
     setStars(sortStars(goldStarCountUpdate, greyStarCountUpdate));

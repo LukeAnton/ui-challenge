@@ -14,7 +14,7 @@ const CardState = (props) => {
   //This is used to pass to the CardReducer
   const [state, dispatch] = useReducer(CardReducer, initState);
 
-  // Get Contacts
+  // Get Cards
   const getCards = async () => {
     try {
       const res = await axios.get("http://localhost:3000/cards");
@@ -27,7 +27,7 @@ const CardState = (props) => {
     }
   };
 
-  //this function submits a rating
+  // Add Rating
   const addRating = async (title, published, user, id, item, fullStarCount) => {
     const totalRating = calculateRating(item, fullStarCount);
 
