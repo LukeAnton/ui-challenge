@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { $white, $offBlack, grid } from "./_config.style";
+import { $white, $offBlack, grid } from "../../styles/_config.style";
 
-export const StyleFooter = styled.footer`
+export const Footer = styled.footer`
   height: 70px;
   width: 100%;
   position: fixed;
@@ -21,24 +21,24 @@ export const StyleFooter = styled.footer`
   }
 `;
 
-export const StyleCopywrightTag = styled.p`
+export const CopywrightTag = styled.p`
   margin: 0 10px;
 `;
 
-export const StyledLink = styled(Link)`
+export const FooterLink = styled(Link)`
   text-decoration: none;
   color: ${$white};
   margin: 0 10px;
 `;
 
-export const StyleLeftContainer = styled.div`
+export const LeftContainer = styled.div`
   display: inline-block;
   @media ${grid.twoBox} {
     display: block;
     margin: 5px 0;
   }
 `;
-export const StyleRightContainer = styled.ul`
+export const RightContainer = styled.ul`
   display: inline-block;
   display: flex;
   @media ${grid.twoBox} {

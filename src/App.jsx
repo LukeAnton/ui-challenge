@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-import "./styles/App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Global/Footer";
 import Header from "./components/Global/Header";
@@ -24,7 +23,7 @@ const App = () => {
       <CardState>
         <StyleMainContainer className="App">
           <GlobalStyles />
-          <Header className="render-font " />
+          <Header />
           <Route exact path="/" component={Home} />
           <Footer />
         </StyleMainContainer>

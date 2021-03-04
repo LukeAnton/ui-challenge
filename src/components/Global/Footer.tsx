@@ -1,26 +1,20 @@
 import React from "react";
 
 //Style imports
-import {
-  StyleFooter,
-  StyleCopywrightTag,
-  StyleLeftContainer,
-  StyleRightContainer,
-  StyledLink,
-} from "../../styles/Footer.style";
+import * as S from "./Footer.style";
 
 const Footer: React.FC = () => {
   return (
-    <StyleFooter>
-      <StyleLeftContainer>
-        <StyleCopywrightTag>2019 &copy; NETFRONT</StyleCopywrightTag>
-      </StyleLeftContainer>
-      <StyleRightContainer>
-        <StyledLink to="#">Privacy </StyledLink>|
-        <StyledLink to="#"> Terms and Conditions </StyledLink>|
-        <StyledLink to="#"> Contact</StyledLink>
-      </StyleRightContainer>
-    </StyleFooter>
+    <S.Footer>
+      <S.LeftContainer>
+        <S.CopywrightTag>2019 &copy; NETFRONT</S.CopywrightTag>
+      </S.LeftContainer>
+      <S.RightContainer>
+        <S.FooterLink to="#">Privacy </S.FooterLink>|
+        <S.FooterLink to="#"> Terms and Conditions </S.FooterLink>|
+        <S.FooterLink to="#"> Contact</S.FooterLink>
+      </S.RightContainer>
+    </S.Footer>
   );
 };
 

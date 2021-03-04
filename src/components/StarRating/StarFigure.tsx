@@ -4,17 +4,17 @@ import React from "react";
 import { StarFigureProps } from "../../typescript/interface/starRating";
 
 //Style imports
-import { StyledStarRatingFigure } from "../../styles/StarFigure.style";
+import * as S from "./StarFigure.style";
 
-const StarFigure: React.FC<StarFigureProps> = ({ fullStarCount }) => {
+const StarFigure: React.FC<StarFigureProps> = ({ goldStarCount }) => {
   return (
-    <StyledStarRatingFigure>
-      {fullStarCount
-        ? fullStarCount.toString().includes(".")
-          ? fullStarCount.toFixed(1)
-          : fullStarCount.toFixed(1)
+    <S.StarRatingFigure>
+      {goldStarCount
+        ? goldStarCount.toString().includes(".")
+          ? goldStarCount.toFixed(1)
+          : goldStarCount.toFixed(1)
         : "No review"}
-    </StyledStarRatingFigure>
+    </S.StarRatingFigure>
   );
 };
 

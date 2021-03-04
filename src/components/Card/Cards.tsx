@@ -4,7 +4,7 @@ import Card from "./Card";
 import { CardsTypes } from "../../typescript/interface/card";
 
 //Style imports
-import { StyleCardsGrid } from "../../styles/Cards.style";
+import * as S from "./Cards.style";
 
 export const Cards: React.FC = () => {
   //Cards JSON object
@@ -17,7 +17,7 @@ export const Cards: React.FC = () => {
   }, []);
 
   return (
-    <StyleCardsGrid>
+    <S.CardsGrid>
       {cards.map((card: CardsTypes) => {
         const title: string = card.title;
         const published: boolean = card.published;
@@ -35,7 +35,7 @@ export const Cards: React.FC = () => {
           />
         );
       })}
-    </StyleCardsGrid>
+    </S.CardsGrid>
   );
 };
 

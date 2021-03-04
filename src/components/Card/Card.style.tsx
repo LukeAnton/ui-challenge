@@ -1,7 +1,12 @@
 import styled from "styled-components";
-import { $white, $grey, $published, $unpublished } from "./_config.style";
+import {
+  $white,
+  $grey,
+  $published,
+  $unpublished,
+} from "../../styles/_config.style";
 
-export const StyledCard = styled.div`
+export const Card = styled.li`
   height: 315px;
   width: 290px;
   margin: 10px;
@@ -15,7 +20,7 @@ export const StyledCard = styled.div`
   }
 `;
 
-export const StyledCardImageContainer = styled.div`
+export const CardImageContainer = styled.div`
   width: 100%;
   height: 65%;
   margin-top: -30px;
@@ -26,11 +31,11 @@ export const StyledCardImageContainer = styled.div`
   background-color: ${$grey};
 `;
 
-export const StyledCardImage = styled.img`
+export const CardImage = styled.img`
   width: 123px;
 `;
 
-export const StylePublishedTitle = styled.h2<{ published: boolean }>`
+export const PublishedTitle = styled.h2<{ published: boolean }>`
   display: inline-block;
   position: relative;
   padding: 15px;
@@ -45,19 +50,19 @@ export const StylePublishedTitle = styled.h2<{ published: boolean }>`
     published ? $published : $unpublished};
 `;
 
-export const StyledCardInfoSection = styled.div`
+export const CardInfoSection = styled.div`
   height: 35%;
   padding: 5px 20px;
 `;
 
-export const StyledAppTitle = styled.h2`
+export const AppTitle = styled.h2`
   margin: 10px 0;
   font-size: 17pt;
 `;
 
-export const StyledUserTitle = styled.p`
+export const UserTitle = styled.p`
   margin: 10px 0;
   font-weight: 100;
   font-size: 10pt;
 `;
-export const StyleRatingSection = styled.div``;
+export const RatingSection = styled.div``;

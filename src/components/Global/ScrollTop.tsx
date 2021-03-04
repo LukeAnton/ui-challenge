@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import toTop from "../../assets/to-top.svg";
 
 //Style imports
-import { StyleToTop } from "../../styles/ScrollTop.style";
+import * as S from "./ScrollTop.style";
 
 const ScrollTop: React.FC = () => {
   const [showScroll, setShowScroll] = useState<boolean>(false);
@@ -17,7 +17,7 @@ const ScrollTop: React.FC = () => {
 
   window.addEventListener("scroll", checkScrollTop);
   return (
-    <StyleToTop
+    <S.ToTop
       showScroll={showScroll}
       onClick={() => scrollTop()}
       src={toTop}

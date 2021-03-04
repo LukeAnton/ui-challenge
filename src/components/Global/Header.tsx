@@ -5,40 +5,28 @@ import miniNav from "../../assets/mini-nav.svg";
 import profile from "../../assets/profile.svg";
 
 //Style imports
-import {
-  StyleHeaderContainer,
-  StyleHeader,
-  StyleSVG,
-  StyleProfileSVG,
-  StyleSecondaryHeader,
-  StyleBreadcrumb,
-  StyleBreadCrumbContainer,
-  StylePageTitle,
-  StyleLeftContainer,
-  StyleRightContainer,
-  StyleMiniNav,
-} from "../../styles/Header.style";
+import * as S from "./Header.style";
 
 const Header: React.FC = () => {
   return (
-    <StyleHeaderContainer className="render-font">
-      <StyleHeader>
-        <StyleLeftContainer>
-          <StyleSVG src={logo} alt="logo" />
-        </StyleLeftContainer>
-        <StyleRightContainer>
-          <StyleMiniNav src={miniNav} alt="mini-nav" />
-          <StyleProfileSVG src={menuDash} alt="menu-dash" />
-          <StyleProfileSVG src={profile} alt="profile" />
-        </StyleRightContainer>
-      </StyleHeader>
-      <StyleSecondaryHeader>
-        <StyleBreadCrumbContainer>
-          <StyleBreadcrumb>{"Dashboard > My apps"}</StyleBreadcrumb>
-          <StylePageTitle>{"My apps"}</StylePageTitle>
-        </StyleBreadCrumbContainer>
-      </StyleSecondaryHeader>
-    </StyleHeaderContainer>
+    <S.HeaderContainer className="render-font">
+      <S.Header>
+        <S.LeftContainer>
+          <S.SVG src={logo} alt="logo" />
+        </S.LeftContainer>
+        <S.RightContainer>
+          <S.MiniNav src={miniNav} alt="mini-nav" />
+          <S.ProfileSVG src={menuDash} alt="menu-dash" />
+          <S.ProfileSVG src={profile} alt="profile" />
+        </S.RightContainer>
+      </S.Header>
+      <S.SecondaryHeader>
+        <S.BreadCrumbContainer>
+          <S.Breadcrumb>{"Dashboard > My apps"}</S.Breadcrumb>
+          <S.PageTitle>{"My apps"}</S.PageTitle>
+        </S.BreadCrumbContainer>
+      </S.SecondaryHeader>
+    </S.HeaderContainer>
   );
 };
 

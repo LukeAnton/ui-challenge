@@ -5,19 +5,7 @@ import StarRating from "../StarRating/StarRating";
 //Typescript imports
 import { CardProps } from "../../typescript/interface/card";
 
-//Style imports
-import "../../styles/Card.css";
-
-import {
-  StyledCard,
-  StyledCardImageContainer,
-  StyledCardImage,
-  StylePublishedTitle,
-  StyledCardInfoSection,
-  StyledAppTitle,
-  StyledUserTitle,
-  StyleRatingSection,
-} from "../../styles/Card.style";
+import * as S from "./Card.style";
 
 export const Card: React.FC<CardProps> = ({
   title,
@@ -27,17 +15,17 @@ export const Card: React.FC<CardProps> = ({
   id,
 }) => {
   return (
-    <StyledCard className="render-font">
-      <StylePublishedTitle published={published}>
+    <S.Card>
+      <S.PublishedTitle published={published}>
         {published ? "Published" : "Unpublished"}
-      </StylePublishedTitle>
-      <StyledCardImageContainer>
-        <StyledCardImage src={logo} alt="image-placement" />
-      </StyledCardImageContainer>
-      <StyledCardInfoSection>
-        <StyledAppTitle>{title}</StyledAppTitle>
-        <StyledUserTitle>by {user} </StyledUserTitle>
-        <StyleRatingSection>
+      </S.PublishedTitle>
+      <S.CardImageContainer>
+        <S.CardImage src={logo} alt="image-placement" />
+      </S.CardImageContainer>
+      <S.CardInfoSection>
+        <S.AppTitle>{title}</S.AppTitle>
+        <S.UserTitle>by {user} </S.UserTitle>
+        <S.RatingSection>
           <StarRating
             title={title}
             published={published}
@@ -45,9 +33,9 @@ export const Card: React.FC<CardProps> = ({
             rating={rating}
             id={id}
           />
-        </StyleRatingSection>
-      </StyledCardInfoSection>
-    </StyledCard>
+        </S.RatingSection>
+      </S.CardInfoSection>
+    </S.Card>
   );
 };
 

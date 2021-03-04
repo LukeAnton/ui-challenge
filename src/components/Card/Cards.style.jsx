@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { grid } from "./_config.style";
+import { grid } from "../../styles/_config.style";
 
-export const StyleCardsGrid = styled.div`
+export const CardsGrid = styled.ul`
+  list-style-type: none;
   width: 1560px;
   margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;

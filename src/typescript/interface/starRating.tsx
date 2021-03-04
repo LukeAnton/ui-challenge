@@ -11,5 +11,5 @@ export interface Stars {
 }
 
 export interface StarFigureProps {
-  fullStarCount: number;
+  goldStarCount: number;
 }

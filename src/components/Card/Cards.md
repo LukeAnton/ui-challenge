@@ -1,5 +1,0 @@
-Cards example
-
-```js
-<Cards />
-```

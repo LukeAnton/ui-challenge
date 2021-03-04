@@ -12,7 +12,7 @@ import { StarRatingProps, Stars } from "../../typescript/interface/starRating";
 import { calculateRating, sortStars } from "../../functions/functions";
 
 //Style imports
-import { StyledStar } from "../../styles//StarRating.style";
+import * as S from "./StarRating.style";
 
 const StarRating: React.FC<StarRatingProps> = ({
   title,
@@ -21,24 +21,24 @@ const StarRating: React.FC<StarRatingProps> = ({
   rating,
   id,
 }) => {
-  const [fullStarCount, setFullStarCount] = useState<number>(rating);
+  const [goldStarCount, setGoldStarCount] = useState<number>(rating);
   const [greyStarCount] = useState<number>(Math.abs(Math.round(rating) - 5));
   const [stars, setStars] = useState<Stars[]>([]);
   const cardContext = useContext(CardContext);
   const { addRating } = cardContext;
 
   useEffect(() => {
-    setStars(sortStars(fullStarCount, greyStarCount));
+    setStars(sortStars(goldStarCount, greyStarCount));
   }, []);
 
-  //on click handler
+  // on click handler
   const handleClick = (item: number) => {
-    const totalRating: number = calculateRating(item, fullStarCount);
+    const totalRating: number = calculateRating(item, goldStarCount);
     const goldStarCountUpdate: number = Math.round(totalRating);
     const greyStarCountUpdate: number = Math.abs(Math.round(totalRating) - 5);
 
-    addRating(title, published, user, id, item, fullStarCount);
-    setFullStarCount(totalRating);
+    setGoldStarCount(totalRating);
+    addRating(title, published, user, id, item, goldStarCount);
     setStars(sortStars(goldStarCountUpdate, greyStarCountUpdate));
   };
 
@@ -46,7 +46,7 @@ const StarRating: React.FC<StarRatingProps> = ({
     <>
       {stars.map(({ index, color }) => {
         return (
-          <StyledStar
+          <S.Star
             key={index}
             onClick={() => handleClick(index)}
             src={color === "gold" ? goldStar : greyStar}
@@ -54,7 +54,7 @@ const StarRating: React.FC<StarRatingProps> = ({
           />
         );
       })}
-      <StarFigure fullStarCount={fullStarCount} />
+      <StarFigure goldStarCount={goldStarCount} />
     </>
   );
 };

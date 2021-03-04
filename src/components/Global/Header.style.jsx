@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
-import { $gradient1, $gradient2, $grey, grid } from "./_config.style";
+import {
+  $gradient1,
+  $gradient2,
+  $grey,
+  grid,
+} from "../../styles/_config.style";
 
-export const StyleHeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
   height: 140px;
   width: 100%;
   margin: 0 0 30px 0;
 `;
-export const StyleHeader = styled.nav`
+export const Header = styled.nav`
   height: 50%;
   padding: 10px;
   display: flex;
@@ -16,13 +21,13 @@ export const StyleHeader = styled.nav`
   background: linear-gradient(to right, ${$gradient1}, ${$gradient2});
 `;
 
-export const StyleSVG = styled.img`
+export const SVG = styled.img`
   height: 40px;
   margin: 10px 5px;
   cursor: pointer;
   display: block;
 `;
-export const StyleMiniNav = styled.img`
+export const MiniNav = styled.img`
   transform: rotate(180deg);
   height: 30px;
   display: none;
@@ -30,7 +35,7 @@ export const StyleMiniNav = styled.img`
     display: block;
   }
 `;
-export const StyleProfileSVG = styled(StyleSVG)`
+export const ProfileSVG = styled(SVG)`
   height: 20px;
   margin: 0 10px;
   @media ${grid.twoBox} {
@@ -38,14 +43,14 @@ export const StyleProfileSVG = styled(StyleSVG)`
   }
 `;
 
-export const StyleSecondaryHeader = styled.div`
+export const SecondaryHeader = styled.div`
   width: 100%;
   height: 50%;
   background-color: ${$grey};
   font-weight: 100;
   padding: 5px 0;
 `;
-export const StyleBreadCrumbContainer = styled.div`
+export const BreadCrumbContainer = styled.div`
   width: 1560px;
   margin: 0 auto;
   //breadcrumb container same width as cards array container
@@ -69,22 +74,22 @@ export const StyleBreadCrumbContainer = styled.div`
     width: calc(315px - 20px);
   }
 `;
-export const StyleBreadcrumb = styled.p`
+export const Breadcrumb = styled.p`
   display: block;
   line-height: 26px;
   font-size: 10pt;
   font-weight: 100;
 `;
-export const StylePageTitle = styled.h2`
+export const PageTitle = styled.h2`
   display: block;
   font-size: 17pt;
   font-weight: bold;
 `;
 
-export const StyleLeftContainer = styled.div`
+export const LeftContainer = styled.div`
   display: inline-block;
 `;
-export const StyleRightContainer = styled.div`
+export const RightContainer = styled.div`
   display: inline-block;
   display: flex;
 `;

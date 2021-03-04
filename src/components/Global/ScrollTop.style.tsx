@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyleToTop = styled.img<{ showScroll: boolean }>`
+export const ToTop = styled.img<{ showScroll: boolean }>`
   position: fixed;
   width: 70px;
   bottom: 70px;

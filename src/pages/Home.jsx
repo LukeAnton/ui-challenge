@@ -2,14 +2,14 @@ import React from "react";
 import Cards from "../components/Card/Cards";
 import ScrollTop from "../components/Global/ScrollTop";
 
-import { StyledHomeContainer } from "./Home.style";
+import * as S from "./Home.style";
 
 const Home = () => {
   return (
-    <StyledHomeContainer>
+    <S.HomeContainer>
       <Cards />
       <ScrollTop />
-    </StyledHomeContainer>
+    </S.HomeContainer>
   );
 };
 

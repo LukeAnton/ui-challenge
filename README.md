@@ -31,9 +31,3 @@ start server
 ```sh
    npm run start or yarn start
 ```
-
-3. -- Start Story Guidist server --- Component Library
-
-```sh
-   npx styleguidist server
-```
